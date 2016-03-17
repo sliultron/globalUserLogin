@@ -1,0 +1,16 @@
+﻿<div id="global-user-wrap" class="sign-in-step2">
+    <div id="global-user" class="sign-in-step2">
+        <div class="form-nav"><a id="signIn" href="#" class="btn-back">Back</a></div>
+        <h2>Activate Account</h2>
+        <p>Your account is not activated yet.</p>
+        <span id="gul-activate-account-error-message" class="error-msg"><%=errorMsg%></span>
+        <span id="gul-activate-account-message"></span>
+        <form id="form-activate-account" method="post">
+            <fieldset>
+                <label for="Email">Email Address</label>
+                <input type="email" name="Email" id="Email" value="<%=userEmail%>" />
+            </fieldset>
+            <div class="form-btn"><button type="submit" id="btn-activate-account">Send</button></div>
+        </form>
+    </div>
+</div>

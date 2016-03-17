@@ -1,0 +1,562 @@
+﻿/* ====================
+    * Mobile First *
+
+    * CSS Structure
+    - Fonts
+    - Base
+    - Forms
+    - Content
+    - Media queries
+ ==================== */
+
+
+
+/* ==========================================================================
+ Fonts
+ ========================================================================== */
+
+/* icon fonts */
+
+@font-face {
+    font-family: 'Gulico';
+    src: url('/app/globalUserLogin/fonts/icomoon.eot?44g7pf');
+    src: url('/app/globalUserLogin/fonts/icomoon.eot?#iefix44g7pf') format('embedded-opentype'), 
+         url('/app/globalUserLogin/fonts/icomoon.woff?44g7pf') format('woff'), 
+         url('/app/globalUserLogin/fonts/icomoon.ttf?44g7pf') format('truetype'), 
+         url('/app/globalUserLogin/fonts/icomoon.svg?44g7pf#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="hip-icon-"], [class*=" hip-icon-"] {
+    font-family: 'Gulico';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+#global-user .hip-icon-facebook:before {
+    content: "\e617";
+}
+
+#global-user .hip-icon-twitter:before {
+    content: "\e61a";
+}
+
+#global-user .hip-icon-google:before {
+    content: "\e601";
+    font-weight: bold;
+}
+
+#global-user #form-activate-account {
+    padding-top: 10px;
+}
+
+#global-user #gul-activate-account-message {
+    color: #468847;
+    font-weight: bold;
+}
+
+
+/* ==========================================================================
+ Base
+ ========================================================================== */
+
+/*-- Helpers --*/
+.center {
+    text-align: center;
+}
+
+.top0 {
+    margin-top: 0 !important;
+}
+
+.bottom0 {
+    margin-bottom: 0 !important;
+}
+
+.topx2 {
+    margin-top: 2em !important;
+}
+
+.bottomx2 {
+    margin-bottom: 2em !important;
+}
+
+.top1 {
+    margin-top: 1em !important;
+}
+
+.bottom1 {
+    margin-bottom: 1em !important;
+}
+
+.tophalf {
+    margin-top: 0.5em !important;
+}
+
+.bottomhalf {
+    margin-bottom: 0.5em !important;
+}
+
+.larger {
+    font-size: 1.4em;
+}
+
+.large {
+    font-size: 1.2em;
+}
+
+.small {
+    font-size: 0.92em;
+}
+
+.smaller {
+    font-size: 0.85em;
+}
+
+.lower {
+    text-transform: none;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.capped {
+    text-transform: capitalize;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.unbold {
+    font-weight: normal;
+}
+
+.light {
+    font-weight: 100;
+}
+
+.heavy {
+    font-weight: 900;
+}
+
+.transparent {
+    opacity: 0.4;
+}
+
+.spacey {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+.spaceleft {
+    padding-left: 0.3em;
+}
+
+.spaceright {
+    padding-right: 0.3em;
+}
+
+
+#global-user, #global-user *,
+#global-user:before, #global-user *:before,
+#global-user:after, #global-user *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    #global-user a {
+        color: #444;
+        text-decoration: underline;
+    }
+
+    #global-user h2 {
+        font-size: 150%;
+        line-height: 1.2;
+        margin: 0 0 25px;
+    }
+
+    #global-user h3 {
+        font-size: 120%;
+        line-height: 1.2;
+        margin: 0 0 15px;
+    }
+
+    #global-user p {
+        margin: 0 0 15px;
+    }
+
+    #global-user .small {
+        font-size: 90%;
+    }
+
+    #global-user img {
+        max-width: 100%;
+    }
+
+
+
+    /* button */
+
+    #global-user button,
+    #global-user input[type=submit] {
+        background: #222;
+        border: 0;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px 3%;
+        text-align: center;
+        width: auto;
+        transition: background-color 0.15s ease-out;
+        -webkit-transition: background-color 0.15s ease-out;
+        -moz-transition: background-color 0.15s ease-out;
+    }
+
+        #global-user button:hover,
+        #global-user input[type=submit]:hover {
+            background-color: #444;
+        }
+
+        #global-user button:active,
+        #global-user input[type=submit]:active {
+            background-color: #000;
+            transition: none;
+        }
+
+    /*-- Messages --*/
+
+    #global-user .error-msg {
+        display: block;
+        margin: 1em 0;
+        color: #B94A48;
+        font-weight: bold;
+    }
+
+    #global-user #gul-profile-message,
+    #global-user #gul-password-update-message {
+        display: block;
+        margin: 1em 0;
+        color: #468847;
+        font-weight: bold;
+    }
+
+
+    /* ==========================================================================
+ Forms
+ ========================================================================== */
+
+    /* forms */
+
+    #global-user fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0 0 15px 0;
+    }
+
+    #global-user input.disabled {
+        background-color: #ccc;
+    }
+
+    #global-user input[type='checkbox'] {
+        padding: 10px;
+        width: 1.5em;
+    }
+
+    #global-user input,
+    #global-user select {
+        border: 1px solid #e0e0e0;
+        padding: 10px;
+        max-width: none;
+        width: 100%;
+    }
+
+    #global-user label {
+        color: #7a7a7a;
+        display: block;
+        font-size: 90%;
+        margin: 0 0 5px;
+    }
+
+        #global-user label.checkbox-label {
+            font-weight: normal;
+            color: #444;
+            display: block;
+            font-size: 100%;
+            margin: 0;
+        }
+
+    #global-user .form-btn {
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+
+        #global-user .form-btn button,
+        #global-user .form-btn input[type=submit] {
+            min-width: 200px;
+            margin: 0 5px;
+        }
+
+    #global-user .recaptcha {
+        margin: 20px 0;
+    }
+
+    #global-user form button[type="submit"].disabled {
+        cursor: default;
+        background-color: #9d9a9a;
+    }
+
+
+    /* validation */
+
+    #global-user .summary-valid {
+        display: none;
+    }
+
+    #global-user .summary-error {
+        color: #468847;
+        background-color: #DFF0D8;
+    }
+
+    #global-user input.parsley-success,
+    #global-user select.parsley-success,
+    #global-user textarea.parsley-success {
+        color: #468847;
+        background-color: #DFF0D8;
+        border: 1px solid #D6E9C6;
+    }
+
+    #global-user input.parsley-error,
+    #global-user select.parsley-error,
+    #global-user textarea.parsley-error {
+        color: #B94A48;
+        background-color: #F2DEDE;
+        border: 1px solid #EED3D7;
+    }
+
+    #global-user .parsley-errors-list {
+        color: #B94A48;
+        margin: 5px 0 3px 0;
+        padding: 0;
+        list-style-type: none;
+        font-size: 0.9em;
+        line-height: 0.9em;
+        opacity: 0;
+        -moz-opacity: 0;
+        -webkit-opacity: 0;
+        transition: all .3s ease-in;
+        -o-transition: all .3s ease-in;
+        -ms-transition: all .3s ease-in;
+        -moz-transition: all .3s ease-in;
+        -webkit-transition: all .3s ease-in;
+    }
+
+        #global-user .parsley-errors-list.filled {
+            opacity: 1;
+        }
+
+    #global-user .help-block {
+        display: inline-block;
+        margin-bottom: 1em;
+        color: #B94A48;
+    }
+
+    #global-user .content-hide, #global-user .hidden {
+        display: none;
+    }
+
+    #global-user .content-show {
+        display: block;
+    }
+
+
+
+/* ==========================================================================
+ Content
+ ========================================================================== */
+
+/* container */
+
+#global-user {
+    background: #fff;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 460px;
+    padding: 0 3% 20px 3%;
+}
+
+    /* sign in */
+
+    #global-user .social-signin {
+        margin: 0 0 50px;
+    }
+
+        #global-user .social-signin button {
+            padding: 10px 0;
+            width: 32%;
+            border: 1px solid #ccc;
+            background: #fff;
+            color: #444;
+            transition: background-color 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out;
+            -webkit-transition: background-color 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out;
+            -moz-transition: background-color 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out;
+        }
+
+            #global-user .social-signin button:hover {
+                background-color: #eee;
+            }
+
+            #global-user .social-signin button#btn-facebook:hover {
+                background-color: #3b5998;
+                border-color: #3b5998;
+                color: #fff;
+            }
+
+            #global-user .social-signin button#btn-twitter:hover {
+                background-color: #00aced;
+                border-color: #00aced;
+                color: #fff;
+            }
+
+            #global-user .social-signin button#btn-google:hover {
+                background-color: #dd4b39;
+                border-color: #dd4b39;
+                color: #fff;
+            }
+
+            #global-user .social-signin button#btn-facebook:active, #global-user .social-signin button#btn-twitter:active, #global-user .social-signin button#btn-google:active {
+                background-color: #111;
+                border-color: #111;
+                color: #fff;
+                transition: none;
+            }
+
+
+            #global-user .social-signin button span {
+                display: block;
+                margin: 5px auto;
+                font-size: 0.85em;
+            }
+
+            #global-user .social-signin button [class^="hip-icon-"]:before {
+                font-size: 2em;
+            }
+
+    #global-user .hip-signin .fieldset-password {
+        margin-bottom: 7px;
+    }
+
+    #global-user .hip-signin .link-forgot-password {
+        font-size: 90%;
+        text-align: right;
+    }
+
+    #global-user .hip-signin .link-signup {
+        margin-top: 2em;
+        text-align: center;
+    }
+
+    /* forgot password */
+    #global-user .link-signin {
+        margin-top: 2em;
+        text-align: center;
+    }
+
+        #global-user .link-signin h3 {
+            margin-bottom: 10px;
+        }
+
+
+    /* back button */
+    #global-user .form-nav {
+        position: relative;
+        top: -15px;
+        line-height: 20px;
+        font-size: 11px;
+        text-align: right;
+        text-transform: uppercase;
+    }
+
+        #global-user .form-nav .btn-back {
+            text-decoration: none;
+        }
+
+            #global-user .form-nav .btn-back:before {
+                content: "\2039";
+                padding-right: 3px;
+                font-size: 1.5em;
+                vertical-align: -0.05em;
+            }
+
+
+    #global-user p.or {
+        position: relative;
+        margin: 3em 0;
+        text-align: center;
+    }
+
+p.or:before, p.or:after {
+    position: absolute;
+    content: "";
+    width: 45%;
+    height: 1px;
+    left: 0;
+    top: 50%;
+    background: #ccc;
+}
+
+p.or:after {
+    left: auto;
+    right: 0;
+}
+
+
+#password-help-box {
+    display: none;
+}
+
+    #password-help-box .password-help-body {
+        border: 1px solid #dda;
+        margin: 0 0 15px 0;
+        padding: 10px;
+        background-color: #ffe;
+        border-radius: 3px;
+    }
+
+        #password-help-box .password-help-body p:last-child {
+            margin-bottom: 0;
+        }
+
+#password-helper {
+    float: right;
+}
+
+    #password-helper:before {
+        font-family: 'Gulico';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: relative;
+        margin-right: 0.5rem;
+        top: 0.1rem;
+        content: "\f05a";
+        opacity: 0.7;
+    }

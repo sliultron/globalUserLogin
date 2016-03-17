@@ -1,0 +1,53 @@
+﻿<div id="global-user-wrap" class="sign-in">
+    <div id="global-user" class="sign-in">
+        <h2>Sign In</h2>
+        <section class="social-signin">
+            <h3>with a social login account:</h3>
+            <%
+            if(facebook.enabled){%>
+            <button id="btn-facebook" url="<%=facebook.url%>">
+                <span class="hip-icon-facebook"></span>
+                <span>Facebook</span>
+            </button>
+            <%}
+            if(twitter.enabled){%>
+            <button id="btn-twitter" url="<%=twitter.url%>">
+                <span class="hip-icon-twitter"></span>
+                <span>Twitter</span>
+            </button>
+            <%}
+            if(google.enabled){%>
+            <button id="btn-google" url="<%=google.url%>">
+                <span class="hip-icon-google"></span>
+                <span>Google</span>
+            </button>
+            <%}
+            %>
+        </section>
+        <section class="hip-signin">
+            <h3>or with your email address:</h3>
+            <div class="summary-valid"></div>
+            <span class="error-msg" id="gul-login"></span>
+            <form name="loginForm" id="loginForm" method="post">
+                <fieldset class="fieldset-email">
+                    <label for="Email">Email Address</label>
+                    <input type="email" name="Email" id="Email" required />
+                </fieldset>
+                <fieldset class="fieldset-password">
+                    <label for="Password">Password</label>
+                    <input type="password" name="Password" id="Password" required />
+                </fieldset>
+                <div class="link-forgot-password"><a id="forgetPassword" href="#">Forgot password?</a></div>
+                <div class="form-btn"><button type="submit" id="signinButton">Sign In</button></div>
+            </form>
+
+            <div class="link-signup"><a id="signUp" href="#">Create New Account</a></div>
+
+            <input type="hidden" id="access_token" value="" />
+            <input type="hidden" id="is_external" value="" />
+            <input type="hidden" id="has_registered" value="" />
+            <input type="hidden" id="userName" value="" />
+            <input type="hidden" id="provider" value="" />
+        </section>
+    </div>
+</div>

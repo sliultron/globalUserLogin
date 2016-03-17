@@ -1,0 +1,29 @@
+﻿<div id="global-user-wrap">
+    <div id="global-user" class="link-accounts">
+        <h2>Account Exists</h2>
+        <p>We found an existing account for <%=userEmail%>.</p>
+        <span id="gul-link-external" class="error-msg"></span>
+
+        <hr />
+        <h6>Do you want to: </h6>
+
+        <h4>Link these accounts</h4>
+        <label for="Password">Password</label>
+        <div class="row">
+            <div class="col-8">
+                <fieldset class="bottom0">
+                    <input type="password" name="Password" id="Password" value="" />
+                </fieldset>
+            </div>
+            <div class="col-4">
+                <button id="btn-link-external">Link</button>
+            </div>
+        </div>
+        <p>Please enter the password for your existing account.</p>
+
+        <p class="or">or</p>
+
+        <h4>Sign in with a different account</h4>
+        <button id="btn-logout">Change User</button>
+    </div>
+</div>
