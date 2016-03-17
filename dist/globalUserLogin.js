@@ -24673,18 +24673,19 @@ System.register("src/ngGlobalUserLogin.js", ["github:angular/bower-angular@1.5.0
                             $scope.confirm(data);
                         });
                     }
+
                     $scope.$on('ngDialog.opened', dialogOpened);
                     $scope.$on('ngDialog.closing', function () {
                         if (vm._currentView) vm._currentView.remove();
                     });
                 }]
             }).then(function (data) {
+                if (onDialogClosed) onDialogClosed(true);
+
                 return data;
             })["catch"](function (error) {
+                if (onDialogClosed) onDialogClosed(false);
                 return error;
-            })["finally"](function () {
-
-                if (onDialogClosed) onDialogClosed();
             });
         }
 

@@ -98,31 +98,39 @@ function globalUserLoginService(ngDialog,$q){
             onPreDialogShowUp();
 
         return ngDialog.openConfirm({
-            template: '<div id="div-gul-container"></div>',
-            plain: true,
-            className: 'ngdialog-theme-default ngdialog-gul',
-            controller: ['$rootScope','$scope', function ($rootScope, $scope) {
-                var vm = this;
-             
-                function dialogOpened(e, $dialog) {
-                    viewFactory()[viewName]("", gulConfig.promiseProvider(), "#div-gul-container", vm).then(function(data){
-                            $scope.confirm(data)
-                  });
-                }
-                $scope.$on('ngDialog.opened', dialogOpened);
-                $scope.$on('ngDialog.closing', function(){
-                    if(vm._currentView) vm._currentView.remove();
-                });
+                template: '<div id="div-gul-container"></div>',
+                plain: true,
+                className: 'ngdialog-theme-default ngdialog-gul',
+                controller: [
+                    '$rootScope', '$scope', function($rootScope, $scope) {
+                        var vm = this;
 
-            }]
-        })
-         .then(function (data) {return data;})
-         .catch(function(error){return error;})
-         .finally(function(){
+                        function dialogOpened(e, $dialog) {
+                            viewFactory()[viewName]("", gulConfig.promiseProvider(), "#div-gul-container", vm)
+                                .then(function(data) {
+                                $scope.confirm(data);
+                            });
+                        }
 
-             if(onDialogClosed)
-                 onDialogClosed();
-         });
+                        $scope.$on('ngDialog.opened', dialogOpened);
+                        $scope.$on('ngDialog.closing', function() {
+                            if (vm._currentView) vm._currentView.remove();
+                        });
+
+                    }
+                ]
+            })
+            .then(function(data) {  
+                if(onDialogClosed)
+                    onDialogClosed(true);
+                
+                return data; })
+            .catch(function(error) {
+                if(onDialogClosed)
+                    onDialogClosed(false);
+                return error;
+            });
+
     }
 
     function initialize(options) {
